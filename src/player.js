@@ -43,7 +43,10 @@ export default class Player {
     // can add a final position object that gets updated in the moveRight/Left function
     // if block to check if you are in final position
     // if true then set vel = 0
-  }
+    if (this.position.x < 0) this.position.x = 0;
+    if (this.position.x + this.width > this.gameWidth)
+      this.position.x = this.gameWidth - this.width;
+  } //these will add the collision for both the right and left boundary
 
   moveRight() {
     //this.position.x += this.movement.x;
